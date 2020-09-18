@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= results[0].username %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Posts by <%= results[0].username %></h1>
+    <div>
+        <% for(let i = 0; i < results.length; i++) { %>
+            <div>
+              <h3><%- results[i].title %></h3>
+              <h5>Created: <%= results[i].created %> </h5>
+              <h5>Modified: <%= results[i].modified %> </h5>
+              <p><%- results[i].body %> </p>
+            </div>
+        <% } %>
+    </div>
+    <a id="next" href="<%= nextUrl %>">next</a>
+  </body>
+</html>
